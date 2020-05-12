@@ -1,0 +1,13 @@
+int Solution::isPower(int X) {
+    
+    if(X == 1){
+        return true;
+    }
+    
+    for(int i = 2; i*i<=X; i++){
+        int p = log(X)/log(i);
+        if(pow(i,p)==X)
+            return true;
+    }
+    return false;
+}
