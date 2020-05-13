@@ -1,0 +1,17 @@
+int Solution::reverse(int A) {
+    
+    
+    int rev=0;
+    
+    while(A!=0)
+    {
+        int temp = rev*10 + A%10;
+        
+        if(temp/10!=rev)
+            return 0;
+        rev=temp;
+        
+        A/=10;
+    }
+    return rev;
+}
