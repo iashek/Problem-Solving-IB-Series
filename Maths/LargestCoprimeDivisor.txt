@@ -1,0 +1,12 @@
+int Solution::cpFact(int A, int B) {
+    // for(int i=A;i>=1;i--)
+    int i=1;
+    int temp=A;
+    while(temp>=0)
+    {
+        i++;
+        if(A%temp==0 && __gcd(temp,B)==1) return temp;
+    
+        temp=A/i;
+    }
+}
