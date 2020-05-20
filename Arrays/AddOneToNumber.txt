@@ -1,0 +1,18 @@
+vector<int> Solution::plusOne(vector<int> &A) {
+    
+    int n=A.size();
+    int carry=1;
+    int i=n-1;
+    while(carry!=0 && i>=0)
+    {
+        int temp=A[i]+carry;
+        A[i]=temp%10;
+        carry=temp/10;
+        i--;
+    }
+    if(carry!=0)
+        A.insert(A.begin(),carry);
+    while(A[0]==0)
+        A.erase(A.begin());
+    return A;
+}

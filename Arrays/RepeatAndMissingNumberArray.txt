@@ -1,0 +1,23 @@
+vector<int> Solution::repeatedNumber(const vector<int> &A) {
+    int n=A.size();
+    vector<int> B(n+1,0);
+    vector<int> ans(2);
+    int a;
+    for(int i=0;i<n;i++)
+    {   if(B[A[i]]==1)
+            a=A[i];
+        else
+            B[A[i]]=1;
+    }
+    int b;
+    for(int i=1;i<n+1;i++)
+    {   if(B[i]==0)
+        {
+            b=i;
+            break;
+        }    
+    }
+    ans[0]=a;
+    ans[1]=b;
+    return ans;
+}
